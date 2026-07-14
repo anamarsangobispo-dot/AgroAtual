@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroAtual</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #F5F5F5;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2E7D32;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+
+        header h1 {
+            margin-top: 10px;
+            font-size: 2rem;
+        }
+
+        header p {
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        main > p.introducao {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2E7D32;
+            font-weight: bold;
+        }
+
+        .categorias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* A tag article foi escolhida porque representa uma publicação ou notícia do site */
+        article {
+            background-color: #FFFFFF;
+            border: 2px solid #2E7D32;
+            border-radius: 8px;
+            padding: 20px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        article img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        article h2 {
+            color: #2E7D32;
+            margin-bottom: 10px;
+        }
+
+        article p {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        article ul {
+            text-align: left;
+            margin: 0 auto 15px auto;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        .botao-saiba-mais {
+            display: inline-block;
+            background-color: #2E7D32;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .botao-saiba-mais:hover {
+            background-color: #1B5E20;
+        }
+
+        .reacoes {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn-curtir,
+        .btn-nao-curtir {
+            background-color: #F5F5F5;
+            border: 2px solid #2E7D32;
+            border-radius: 5px;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background-color: #2E7D32;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        /* Responsividade - telas menores (celular) */
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .categorias {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            article {
+                width: 100%;
+                max-width: 320px;
+            }
+
+        }
+
+        /* Responsividade - tablets */
+        @media (min-width: 601px) and (max-width: 900px) {
+
+            article {
+                width: 45%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <img src="imagens/logo-agroatual.png" alt="Logotipo do AgroAtual representando agricultura, tecnologia e sustentabilidade">
+
+        <h1>AgroAtual</h1>
+
+        <p>Informação que fortalece o campo.</p>
+
+    </header>
+
+    <main>
+
+        <p class="introducao">Confira as principais categorias de notícias do agronegócio</p>
+
+        <div class="categorias">
+
+            <!-- A tag article foi escolhida porque representa uma publicação ou notícia do site -->
+            <article>
+                <img src="imagens/agricultura.png" alt="Trator moderno com drone monitorando uma plantação de soja, representando a agricultura">
+                <h2>Agricultura</h2>
+                <p>Notícias e informações sobre o manejo agrícola e as principais culturas do campo.</p>
+                <ul>
+                    <li>Plantações</li>
+                    <li>Milho</li>
+                    <li>Soja</li>
+                    <li>Feijão</li>
+                    <li>Manejo agrícola</li>
+                </ul>
+                <a href="#" class="botao-saiba-mais">Saiba mais</a>
+                <div class="reacoes">
+                    <button class="btn-curtir">👍 Curtir</button>
+                    <button class="btn-nao-curtir">👎 Não curtir</button>
+                </div>
+            </article>
+
+            <article>
+                <img src="imagens/pecuaria.png" alt="Gado pastando em uma fazenda representando a pecuária">
+                <h2>Pecuária</h2>
+                <p>Tudo sobre criação de gado, produção de leite e bem-estar animal.</p>
+                <ul>
+                    <li>Gado</li>
+                    <li>Produção de leite</li>
+                    <li>Gado de corte</li>
+                    <li>Alimentação animal</li>
+                    <li>Bem-estar dos animais</li>
+                </ul>
+                <a href="#" class="botao-saiba-mais">Saiba mais</a>
+                <div class="reacoes">
+                    <button class="btn-curtir">👍 Curtir</button>
+                    <button class="btn-nao-curtir">👎 Não curtir</button>
+                </div>
+            </article>
+
+            <article>
+                <img src="imagens/clima.png" alt="Nuvens de chuva e estação meteorológica em uma plantação representando a previsão do tempo no campo">
+                <h2>Clima</h2>
+                <p>Acompanhe a previsão do tempo e os fenômenos climáticos que afetam a produção rural.</p>
+                <ul>
+                    <li>Previsão do tempo</li>
+                    <li>Chuvas</li>
+                    <li>Secas</li>
+                    <li>Geadas</li>
+                </ul>
+                <a href="#" class="botao-saiba-mais">Saiba mais</a>
+                <div class="reacoes">
+                    <button class="btn-curtir">👍 Curtir</button>
+                    <button class="btn-nao-curtir">👎 Não curtir</button>
+                </div>
+            </article>
+
+            <article>
+                <img src="imagens/tecnologia.png" alt="Drone e trator com painéis solares sobrevoando plantação representando a tecnologia rural">
+                <h2>Tecnologia Rural</h2>
+                <p>Máquinas, drones e inovações que estão transformando o campo.</p>
+                <ul>
+                    <li>Máquinas agrícolas</li>
+                    <li>Drones</li>
+                    <li>Inovações no campo</li>
+                </ul>
+                <a href="#" class="botao-saiba-mais">Saiba mais</a>
+                <div class="reacoes">
+                    <button class="btn-curtir">👍 Curtir</button>
+                    <button class="btn-nao-curtir">👎 Não curtir</button>
+                </div>
+            </article>
+
+            <article>
+                <img src="imagens/lua-plantio.png" alt="Agricultor consultando calendário lunar de plantio sob a lua cheia, representando o plantio conforme as fases da lua">
+                <h2>Lua e Plantio</h2>
+                <p>Conhecimentos tradicionais sobre as fases da lua aplicados ao plantio, sempre considerando que solo, clima e manejo também influenciam a produção.</p>
+                <ul>
+                    <li>Cebolinha</li>
+                    <li>Alface</li>
+                    <li>Cenoura</li>
+                    <li>Batata</li>
+                </ul>
+                <a href="#" class="botao-saiba-mais">Saiba mais</a>
+                <div class="reacoes">
+                    <button class="btn-curtir">👍 Curtir</button>
+                    <button class="btn-nao-curtir">👎 Não curtir</button>
+                </div>
+            </article>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AgroAtual — Informação que fortalece o campo.</p>
+    </footer>
+
+</body>
+
+</html>
