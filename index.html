@@ -134,6 +134,13 @@
             font-size: 0.9rem;
         }
 
+        /* Destaque visual quando o botao ja foi clicado (classe adicionada pelo JS) */
+        .btn-curtir.ativo,
+        .btn-nao-curtir.ativo {
+            background-color: #2E7D32;
+            color: #FFFFFF;
+        }
+
         footer {
             background-color: #2E7D32;
             color: #FFFFFF;
@@ -206,8 +213,8 @@
                 </ul>
                 <a href="#" class="botao-saiba-mais">Saiba mais</a>
                 <div class="reacoes">
-                    <button class="btn-curtir">👍 Curtir</button>
-                    <button class="btn-nao-curtir">👎 Não curtir</button>
+                    <button class="btn-curtir">👍 Curtir <span>0</span></button>
+                    <button class="btn-nao-curtir">👎 Não curtir <span>0</span></button>
                 </div>
             </article>
 
@@ -224,8 +231,8 @@
                 </ul>
                 <a href="#" class="botao-saiba-mais">Saiba mais</a>
                 <div class="reacoes">
-                    <button class="btn-curtir">👍 Curtir</button>
-                    <button class="btn-nao-curtir">👎 Não curtir</button>
+                    <button class="btn-curtir">👍 Curtir <span>0</span></button>
+                    <button class="btn-nao-curtir">👎 Não curtir <span>0</span></button>
                 </div>
             </article>
 
@@ -241,8 +248,8 @@
                 </ul>
                 <a href="#" class="botao-saiba-mais">Saiba mais</a>
                 <div class="reacoes">
-                    <button class="btn-curtir">👍 Curtir</button>
-                    <button class="btn-nao-curtir">👎 Não curtir</button>
+                    <button class="btn-curtir">👍 Curtir <span>0</span></button>
+                    <button class="btn-nao-curtir">👎 Não curtir <span>0</span></button>
                 </div>
             </article>
 
@@ -257,8 +264,8 @@
                 </ul>
                 <a href="#" class="botao-saiba-mais">Saiba mais</a>
                 <div class="reacoes">
-                    <button class="btn-curtir">👍 Curtir</button>
-                    <button class="btn-nao-curtir">👎 Não curtir</button>
+                    <button class="btn-curtir">👍 Curtir <span>0</span></button>
+                    <button class="btn-nao-curtir">👎 Não curtir <span>0</span></button>
                 </div>
             </article>
 
@@ -274,8 +281,8 @@
                 </ul>
                 <a href="#" class="botao-saiba-mais">Saiba mais</a>
                 <div class="reacoes">
-                    <button class="btn-curtir">👍 Curtir</button>
-                    <button class="btn-nao-curtir">👎 Não curtir</button>
+                    <button class="btn-curtir">👍 Curtir <span>0</span></button>
+                    <button class="btn-nao-curtir">👎 Não curtir <span>0</span></button>
                 </div>
             </article>
 
@@ -286,6 +293,57 @@
     <footer>
         <p>&copy; 2026 AgroAtual — Informação que fortalece o campo.</p>
     </footer>
+
+    <script>
+        // Seleciona TODOS os botoes de curtir e todos os de nao curtir da pagina
+        const botoesCurtir = document.querySelectorAll(".btn-curtir");
+        const botoesNaoCurtir = document.querySelectorAll(".btn-nao-curtir");
+
+        // Percorre cada botao de curtir, um por um, e da a ele seu proprio
+        // comportamento (cada article tem o seu botao independente)
+        botoesCurtir.forEach(function (botao) {
+
+            // Guarda se ESSE botao especifico ja foi clicado ou nao
+            let curtiu = false;
+
+            botao.addEventListener("click", function () {
+                // Pega o numero (span) que fica dentro deste botao
+                let contador = botao.querySelector("span");
+
+                if (curtiu === false) {
+                    // Primeiro clique: soma 1 e marca como curtido
+                    contador.textContent++;
+                    curtiu = true;
+                    botao.classList.add("ativo");
+                } else {
+                    // Clicou de novo: desfaz a curtida (tira 1)
+                    contador.textContent--;
+                    curtiu = false;
+                    botao.classList.remove("ativo");
+                }
+            });
+        });
+
+        // Mesma logica para os botoes de "nao curtir"
+        botoesNaoCurtir.forEach(function (botao) {
+
+            let naoCurtiu = false;
+
+            botao.addEventListener("click", function () {
+                let contador = botao.querySelector("span");
+
+                if (naoCurtiu === false) {
+                    contador.textContent++;
+                    naoCurtiu = true;
+                    botao.classList.add("ativo");
+                } else {
+                    contador.textContent--;
+                    naoCurtiu = false;
+                    botao.classList.remove("ativo");
+                }
+            });
+        });
+    </script>
 
 </body>
 
