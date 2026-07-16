@@ -59,3 +59,10 @@ botaoModoEscuro.addEventListener("click", function () {
         botaoModoEscuro.textContent = "🌙";
     }
 });
+
+// Botao voltar ao topo: ao clicar, rola a pagina de volta para o inicio
+const botaoVoltarTopo = document.querySelector("#botao-voltar-topo");
+
+botaoVoltarTopo.addEventListener("click", function () {
+    window.scrollTo(0, 0);
+});
